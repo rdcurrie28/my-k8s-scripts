@@ -1,0 +1,13 @@
+# minio-pv.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: minio-pv
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: minio-hostpath
+  hostPath:
+    path: /tmp/hostpath-provisioner/kubeflow/minio-pvc
